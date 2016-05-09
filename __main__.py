@@ -15,7 +15,7 @@ logging.basicConfig(filename=fileLog, level=logging.INFO)
 config = configparser.ConfigParser()
 
 #Config file didnt exist and then exit afterwards
-if os.path.isfile(fileConfig):
+if not os.path.isfile(fileConfig):
     config['SETTINGS'] = {'location': 'D:\\Downloads\\',
                           'days': 180}
     with open('config.ini', 'w') as configfile:
