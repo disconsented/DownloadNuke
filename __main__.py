@@ -37,7 +37,7 @@ for file in os.listdir(folderLocation):
     creationDate = datetime.datetime.utcfromtimestamp(os.stat(folderLocation + file).st_ctime)
     location = folderLocation + file
     fileName = location.encode("utf-8")
-    logging.info('Found {} created at {}'.format(fileName, creationDate))
+    #logging.info('Found {} created at {}'.format(fileName, creationDate))
     if creationDate < fileThreshold:
         logging.info("{} is older than the threshold by {} days, deleting.".format(fileName, (fileThreshold - creationDate).days))
         try:
